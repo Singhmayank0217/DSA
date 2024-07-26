@@ -55,3 +55,36 @@ class Solution {
  * }
  * 
  */
+
+/*
+ * optimal solution 2
+ * import java.util.Arrays;
+ * 
+ * class Solution {
+ * public void merge(int[] nums1, int m, int[] nums2, int n) {
+ * int len = m + n;
+ * int gap = (len / 2) + (len % 2);
+ * for (int i = 0; i < n; i++) {
+ * nums1[m + i] = nums2[i];
+ * }
+ * while (gap > 0) {
+ * int i = 0, j = gap;
+ * 
+ * while (j < len) {
+ * if (nums1[i] > nums1[j]) {
+ * int temp = nums1[i];
+ * nums1[i] = nums1[j];
+ * nums1[j] = temp;
+ * }
+ * i++;
+ * j++;
+ * }
+ * if (gap == 1) {
+ * break;
+ * }
+ * gap = (gap / 2) + (gap % 2);
+ * }
+ * }
+ * }
+ * using gap method or shell sort
+ */
