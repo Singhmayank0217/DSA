@@ -25,7 +25,7 @@ class Solution {
     }
 }
 /*
- * better solution
+ * optimal solution 1
  * import java.util.Arrays;
  * 
  * class Solution {
