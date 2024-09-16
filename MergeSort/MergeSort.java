@@ -1,4 +1,4 @@
-package SortingLogic;
+package MergeSort;
 import java.util.*;
 
 public class MergeSort {
