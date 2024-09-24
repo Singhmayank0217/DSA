@@ -1,6 +1,4 @@
 //to print all unique elemnet in array
-
-//to print all unique elemnet in array
 import java.util.*;
 
 public class Question2 {
