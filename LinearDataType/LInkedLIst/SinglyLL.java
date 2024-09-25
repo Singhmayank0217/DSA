@@ -20,23 +20,38 @@ public class SinglyLL {
             head = tail = newNode;
             return;
         }
-        newNode.next=head;
-        head=newNode;
+        newNode.next = head;
+        head = newNode;
     }
-    public void Print(){
-        Node temp=head;
-        while (temp!=null){
-            System.out.print(temp.data+"->");
-            temp=temp.next;
+
+    public void AddAtEnd(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
+    }
+
+    public void Print() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
         }
     }
-    public static void main(String args []){
-        SinglyLL sll=new SinglyLL();
+
+    public static void main(String args[]) {
+        SinglyLL sll = new SinglyLL();
         sll.AddAtBeg(10);
         sll.AddAtBeg(20);
         sll.AddAtBeg(30);
         sll.AddAtBeg(40);
         sll.AddAtBeg(50);
+        sll.Print();
+        sll.AddAtEnd(60);
+        System.out.println();
         sll.Print();
     }
 
