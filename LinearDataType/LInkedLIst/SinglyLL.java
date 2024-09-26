@@ -34,6 +34,18 @@ public class SinglyLL {
         tail = newNode;
     }
 
+    public void AddRandom(int idx, int data) {
+        Node newNode = new Node(data);
+        Node temp = head;
+        int i = 0;
+        while (i < idx - 1) {
+            temp = temp.next;
+            i++;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
     public void Print() {
         Node temp = head;
         while (temp != null) {
@@ -52,6 +64,9 @@ public class SinglyLL {
         sll.Print();
         sll.AddAtEnd(60);
         System.out.println();
+        sll.Print();
+        System.out.println();
+        sll.AddRandom(3, 70);
         sll.Print();
     }
 
