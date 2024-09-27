@@ -13,9 +13,11 @@ public class SinglyLL {
 
     public static Node head;
     public static Node tail;
+    public static int size;
 
     public void AddAtBeg(int data) {
         Node newNode = new Node(data);
+        size++;
         if (head == null) {
             head = tail = newNode;
             return;
@@ -26,6 +28,7 @@ public class SinglyLL {
 
     public void AddAtEnd(int data) {
         Node newNode = new Node(data);
+        size++;
         if (head == null) {
             head = tail = newNode;
             return;
@@ -36,6 +39,7 @@ public class SinglyLL {
 
     public void AddRandom(int idx, int data) {
         Node newNode = new Node(data);
+        size++;
         Node temp = head;
         int i = 0;
         while (i < idx - 1) {
@@ -44,6 +48,19 @@ public class SinglyLL {
         }
         newNode.next = temp.next;
         temp.next = newNode;
+    }
+
+    public int itrSearch(int key) {
+        Node temp = head;
+        int i = 0;
+        while (temp != null) {
+            if (temp.data == key) {
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
     }
 
     public void Print() {
@@ -68,6 +85,9 @@ public class SinglyLL {
         System.out.println();
         sll.AddRandom(3, 70);
         sll.Print();
+        System.out.println();
+        System.out.println(size);
+        System.out.println(sll.itrSearch(20));
+        System.out.println(sll.itrSearch(80));
     }
-
 }
