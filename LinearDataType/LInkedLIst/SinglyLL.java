@@ -63,6 +63,23 @@ public class SinglyLL {
         return -1;
     }
 
+    public int helper(Node head, int key){
+        if(head == null){
+            return -1;
+        }
+        if(head.data==key){
+            return 0;
+        }
+        int idx=helper(head.next,key);
+        if(idx==-1){
+            return -1;
+        }
+        return idx+1;
+    }
+    public int recSearch(int key){
+        return helper(head,key);
+    }
+
     public void Print() {
         Node temp = head;
         while (temp != null) {
@@ -88,6 +105,6 @@ public class SinglyLL {
         System.out.println();
         System.out.println(size);
         System.out.println(sll.itrSearch(20));
-        System.out.println(sll.itrSearch(80));
+        System.out.println(sll.recSearch(80));
     }
 }
