@@ -63,21 +63,35 @@ public class SinglyLL {
         return -1;
     }
 
-    public int helper(Node head, int key){
-        if(head == null){
+    public int helper(Node head, int key) {
+        if (head == null) {
             return -1;
         }
-        if(head.data==key){
+        if (head.data == key) {
             return 0;
         }
-        int idx=helper(head.next,key);
-        if(idx==-1){
+        int idx = helper(head.next, key);
+        if (idx == -1) {
             return -1;
         }
-        return idx+1;
+        return idx + 1;
     }
-    public int recSearch(int key){
-        return helper(head,key);
+
+    public int recSearch(int key) {
+        return helper(head, key);
+    }
+
+    public void Reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
     }
 
     public void Print() {
@@ -96,15 +110,17 @@ public class SinglyLL {
         sll.AddAtBeg(40);
         sll.AddAtBeg(50);
         sll.Print();
-        sll.AddAtEnd(60);
+        // sll.AddAtEnd(60);
         System.out.println();
+        // sll.Print();
+        // System.out.println();
+        // sll.AddRandom(3, 70);
+        // sll.Print();
+        // System.out.println();
+        // System.out.println(size);
+        // System.out.println(sll.itrSearch(20));
+        // System.out.println(sll.recSearch(80));
+        sll.Reverse();
         sll.Print();
-        System.out.println();
-        sll.AddRandom(3, 70);
-        sll.Print();
-        System.out.println();
-        System.out.println(size);
-        System.out.println(sll.itrSearch(20));
-        System.out.println(sll.recSearch(80));
     }
 }
