@@ -94,6 +94,22 @@ public class SinglyLL {
         head = prev;
     }
 
+    public void DeleteNthNodeFromEnd(int n) {
+        Node prev = head;
+        if (size == n) {
+            head = head.next;
+            return;
+        }
+        int i = 1;
+        int find = size - n;
+        while (i < find) {
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+        return;
+    }
+
     public void Print() {
         Node temp = head;
         while (temp != null) {
@@ -120,7 +136,8 @@ public class SinglyLL {
         // System.out.println(size);
         // System.out.println(sll.itrSearch(20));
         // System.out.println(sll.recSearch(80));
-        sll.Reverse();
+        // sll.Reverse();
+        sll.DeleteNthNodeFromEnd(2);
         sll.Print();
     }
 }
