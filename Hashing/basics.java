@@ -3,22 +3,22 @@ package Hashing;
 import java.util.LinkedList;
 
 public class basics {
-    static class HashMap<k, v> {
-        private class Node {
-            k Key;
-            v Value;
+    // static class HashMap<k, v> {
+    // private class Node {
+    // k Key;
+    // v Value;
 
-            public Node(k Key, v Value) {
-                this.key = Key;
-                this.value = value;
-            }
-        }
+    // public Node(k Key, v Value) {
+    // this.key = Key;
+    // this.value = value;
+    // }
+    // }
 
-        private int n;
-        private int N;
-        private LinkedList<Node> buckets[];
+    // private int n;
+    // private int N;
+    // private LinkedList<Node> buckets[];
 
-    }
+    // }
 
 }
 // put() - is used to add th data
