@@ -2,6 +2,7 @@ package Array;
 
 public class occuranceCount {
     class Solution {
+        // using two for loop
         public int majorityElement(int[] nums) {
             int n = nums.length;
             for (int i = 0; i < n; i++) {
