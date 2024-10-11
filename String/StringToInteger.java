@@ -10,9 +10,10 @@ public class StringToInteger {
                 sign = (s.charAt(i) == '-') ? -1 : 1;
                 i++;
             }
-            //
+            // Step 3: Convert digits into an integer
             while (i < n && Character.isDigit(s.charAt(i))) {
-                int digit = s.charAt(i) - '0';
+                int digit = s.charAt(i) - '0'; // Convert char to integer
+
                 if (result > (Integer.MAX_VALUE - digit) / 10) {
                     return (sign == 1) ? Integer.MAX_VALUE : Integer.MIN_VALUE;
                 }
