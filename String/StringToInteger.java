@@ -13,7 +13,7 @@ public class StringToInteger {
             // Step 3: Convert digits into an integer
             while (i < n && Character.isDigit(s.charAt(i))) {
                 int digit = s.charAt(i) - '0'; // Convert char to integer
-
+                // Step 4: Handle overflow cases
                 if (result > (Integer.MAX_VALUE - digit) / 10) {
                     return (sign == 1) ? Integer.MAX_VALUE : Integer.MIN_VALUE;
                 }
