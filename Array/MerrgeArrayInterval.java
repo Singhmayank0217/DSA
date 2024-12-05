@@ -24,3 +24,11 @@ public class MerrgeArrayInterval {
         return res.toArray(new int[res.size()][]);
     }
 }
+
+/*
+ * 🔹 The 1 in last[1] refers to the end time of the interval.
+ * 🔹 The if condition checks for overlap (current[0] ≤ last[1]).
+ * 🔹 If they overlap, Math.max(last[1], current[1]) extends the merged
+ * interval.
+ * 🔹 If they don’t overlap, we simply add the new interval.
+ */
