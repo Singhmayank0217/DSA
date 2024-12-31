@@ -26,3 +26,32 @@ class Solution {
         return new ArrayList<>(result);
     }
 }
+
+/*
+ * better solution
+ * class Solution {
+ * public List<List<Integer>> fourSum(int[] nums, int target) {
+ * Set<List<Integer>> result = new HashSet<>();
+ * Arrays.sort(nums);
+ * int n = nums.length;
+ * 
+ * for (int i = 0; i < n ; i++) {
+ * for (int j = i + 1; j < n ; j++) {
+ * Set<Integer> seenPairs = new HashSet<>();
+ * for (int k = j + 1; k < n ; k++) {
+ * int sums =nums[i] + nums[j] ;
+ * sums+=nums[k];
+ * int complement = target - sums;
+ * if (seenPairs.contains(complement)) {
+ * List<Integer> quadruplet = Arrays.asList(nums[i], nums[j], nums[k],
+ * complement);
+ * result.add(quadruplet);
+ * }
+ * seenPairs.add(nums[k]);
+ * }
+ * }
+ * }
+ * return new ArrayList<>(result);
+ * }
+ * }
+ */
