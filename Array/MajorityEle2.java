@@ -46,3 +46,13 @@ public class MajorityEle2 {
  * }
  * }
  */
+
+// we can also use this if found hard to understand the above sol
+
+/*
+ * for (Integer key : counts.keySet()) {
+ * if (counts.get(key) > n / 3) {
+ * result.add(key);
+ * }
+ * }
+ */
