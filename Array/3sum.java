@@ -28,3 +28,42 @@ class Solution {
 }
 
 }
+
+
+/* using two for loop 
+
+ import java.util.*;
+
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Map<Integer, Integer> numCount = new HashMap<>(); //Store number counts
+        Set<List<Integer>> uniqueTriplets = new HashSet<>();
+
+        //Count the occurrences of each number
+        for (int num : nums) {
+            numCount.put(num, numCount.getOrDefault(num, 0) + 1);
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                int complement = -(nums[i] + nums[j]);
+                if (numCount.containsKey(complement)) {
+                    //Handle cases where complement is one of i or j
+                    if (complement == nums[i] && numCount.get(complement) > 1 ||
+                        complement == nums[j] && numCount.get(complement) > 1 ||
+                        complement != nums[i] && complement != nums[j]) {
+
+                        List<Integer> triplet = Arrays.asList(nums[i], nums[j], complement);
+                        Collections.sort(triplet); //Sort for consistent order in HashSet
+                        uniqueTriplets.add(triplet);
+                    }
+                }
+            }
+        }
+        return new ArrayList<>(uniqueTriplets);
+    }
+}
+
+ 
+ */
